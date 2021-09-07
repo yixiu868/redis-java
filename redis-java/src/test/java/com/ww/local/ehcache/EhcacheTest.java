@@ -1,27 +1,15 @@
-package com.ww.redis.client.redisson;
+package com.ww.local.ehcache;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
 
-@SpringBootTest
-class RedisJavaApplicationTests {
+public class EhcacheTest {
 
-    @Test
-    void contextLoads() {
-    }
-
-    @Test
-	public void test02() {
-		System.out.println("hello world");
-	}
-    
-    @Test
-	public void ehcacheTest01() {
-    	try {
+	@Test
+	public void test01() {
 		// 1-创建缓存管理器
 		CacheManager cacheManager = CacheManager.create("ehcache.xml");
 		
@@ -44,8 +32,10 @@ class RedisJavaApplicationTests {
 		
 		// 8-关闭缓存管理器
 		cacheManager.shutdown();
-    	} catch (Exception e) {
-			e.printStackTrace();
-		}
+	}
+	
+	@Test
+	public void test02() {
+		System.out.println("hello world");
 	}
 }
